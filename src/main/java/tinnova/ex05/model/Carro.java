@@ -1,4 +1,8 @@
-// Referências: https://www.bezkoder.com/spring-boot-jpa-h2-example/
+
+/** Tentei estruturar a Classe Carro, de modo que eu pudesse utilizar a tag de Query posteriormente
+ *  Mas não consegui utilizar as Querys
+ *  Tentei seguir essa referência: https://www.bezkoder.com/spring-boot-jpa-h2-example/
+ */
 
 package tinnova.ex05.model;
 
@@ -27,6 +31,8 @@ public class Carro {
     @Column(name="updated")
     private String updated;
 
+
+    // Getters e Setters
     public long getId() {
         return id;
     }

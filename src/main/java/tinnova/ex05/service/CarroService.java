@@ -17,6 +17,7 @@ public interface CarroService {
 
     void deletar(Long id);
 
+    //@Query("SELECT * FROM Carros") // Tentei utilizar uma tag de query como possível solução, mas não consegui implementar
     List<Carro> encontrarCarrosNaoVendidos();
 
     List<Carro> carrosPorDecada(int decada);

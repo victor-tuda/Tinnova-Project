@@ -16,12 +16,13 @@ public class CarroServiceImpl implements CarroService {
     @Autowired
     private CarroRepository carroRepository;
 
-    // Criando o método de retornar todos os carros;
+    // método para retornar todos os carros;
     @Override
     public Iterable<Carro> buscarTodos() {
         return carroRepository.findAll();
     }
 
+    // método para buscar um carro por id
     @Override
     public Carro buscarPorId(Long id) {
         Optional<Carro> carro = carroRepository.findById(id); // Optional caso o carro não exista
@@ -32,11 +33,13 @@ public class CarroServiceImpl implements CarroService {
             return null;
     }
 
+    // método para cadastrar um carro
     @Override
     public void inserir(Carro carro) {
         carroRepository.save(carro);
     }
 
+    // método para atualizar um carro
     @Override
     public void atualizar(Long id, Carro carro) {
         Optional<Carro> carroBd = carroRepository.findById(id);
@@ -44,6 +47,7 @@ public class CarroServiceImpl implements CarroService {
             carroRepository.save(carro);
     }
 
+    // não consegui fazer esse método funcionar
     @Override
     public void atualizarParcial(Long id, boolean status){
         Optional<Carro> carroBd = carroRepository.findById(id);
@@ -54,6 +58,7 @@ public class CarroServiceImpl implements CarroService {
         }
     }
 
+    // método para deletar um carro
     @Override
     public void deletar(Long id) {
         Optional<Carro> carroBd = carroRepository.findById(id);
@@ -62,6 +67,7 @@ public class CarroServiceImpl implements CarroService {
     }
 
 
+    // métodos necessários que eu não soube implementar
     @Override
     public List<Carro> encontrarCarrosNaoVendidos() {
         return null;

@@ -13,7 +13,7 @@ public class CarroRestController {
     @Autowired
     private CarroService carroService;
 
-    // Retorna todos os carros com um GET vazio
+    // Retorna todos os carros com um GET simples
     @GetMapping
     public ResponseEntity<Iterable<Carro>> buscarTodos(){
         return ResponseEntity.ok(carroService.buscarTodos());
@@ -39,7 +39,7 @@ public class CarroRestController {
         return ResponseEntity.ok(carro);
     }
 
-    // Atualiza Parcial, apenas o status do carro
+    // Atualiza Parcial, apenas o status do carro (não implementado)
     @PatchMapping("/{id}")
     public ResponseEntity<Carro> atualizarParcial(@PathVariable Long id, @PathVariable boolean status){
         carroService.atualizarParcial(id, status);
@@ -53,6 +53,7 @@ public class CarroRestController {
         return ResponseEntity.ok().build();
     }
 
+    // Retorna uma lista de carros não vendidos (não implementado)
     @GetMapping("/naovendidos")
     public ResponseEntity<Iterable<Carro>> encontrarCarrosNaoVendidos(){
         return ResponseEntity.ok(carroService.encontrarCarrosNaoVendidos());
